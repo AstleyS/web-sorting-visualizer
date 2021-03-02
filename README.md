@@ -1,3 +1,6 @@
+# Sorting Algorithm Visualizer
+In this project, I created a Sorting Algorithm Visualizer using React.js framework  
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
