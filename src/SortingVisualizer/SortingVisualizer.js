@@ -1,4 +1,6 @@
 // Bubble Sort
+// This algo sorts an array by repeatedly swapping the adjacent element if it is in wrong order
+// TC: O(n^2)
 export const bubbleSort = arr => {
     let len = arr.length;
 
@@ -14,7 +16,29 @@ export const bubbleSort = arr => {
     return arr;
 }
 
+// Selection Sort
+// This algo sorts an array by repeatedly placing the minimun element of the array in the beginning
+// TC: O(n^2)
+export const selectionSort = arr => {
+    let curr_i = 0;
+
+    while (curr_i < arr.length) {
+        let min_n = Number.MAX_SAFE_INTEGER;
+        let index = 0; 
+        for (let i = curr_i; i < arr.length; i++) {
+            min_n = Math.min(min_n, arr[i]);
+        }
+        index = arr.indexOf(min_n); 
+        [arr[index], arr[curr_i]] = [arr[curr_i], arr[index]]
+        curr_i++;
+    }
+
+    return arr;
+}
+
 // Merge Sort
+// This algo sorts an array by dividing it in smaller arrays, sort them and lastly merge them
+// TC: O(nLog(n)) 
 export const mergeSort = arr => {
         
     if (arr.length === 1) {

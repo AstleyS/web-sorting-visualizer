@@ -34,13 +34,19 @@ export default class SortingVisualizer extends React.Component {
         console.log({realSort})
     }
 
+    selectionSort() {
+        const expectedSort = this.state.array.slice().sort((a, b) => a - b);
+        const realSort = sortingAlgo.selectionSort(this.state.array);
+        console.log(assertSorting(expectedSort, realSort)); 
+        console.log({realSort})
+    }
+
     mergeSort() {
        const expectedSort = this.state.array.sort((a, b) => a - b);
        const realSort = sortingAlgo.mergeSort(this.state.array);
        console.log(assertSorting(expectedSort, realSort));
        console.log({realSort})
     }
-
 
     // This function renders the array values
     render() {
@@ -58,10 +64,10 @@ export default class SortingVisualizer extends React.Component {
               <div className="buttons">
                 <button onClick={() => this.resetArray()}>Generate new array</button>
                 <button onClick={() => this.bubbleSort()}>BubbleSort</button>
+                <button onClick={() => this.selectionSort()}>SelectionSort</button>
                 <button onClick={() => this.mergeSort()}>MergeSort</button>
               </div>
           </div>
-          
         )
     }
 }
