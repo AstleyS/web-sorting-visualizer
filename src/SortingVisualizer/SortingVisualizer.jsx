@@ -57,7 +57,7 @@ export default class SortingVisualizer extends React.Component {
           <div className = 'bars-container'>
               {
                 array.map((value, index) => {
-                    return <div style={{height: `${value}px`}} className="array-bar" key={ index }>
+                    return <div style={{height: `${value}px`}} className="array-bar" id={ index } key={ index }>
                             </div>
                 })
               }
