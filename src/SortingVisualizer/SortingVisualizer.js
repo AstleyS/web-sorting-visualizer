@@ -1,3 +1,19 @@
+// Bubble Sort
+export const bubbleSort = arr => {
+    let len = arr.length;
+
+    while (len >= 0) {
+        for (let i = 0; i < len - 1; i++) {
+            if (arr[i + 1] < arr[i]) {
+                [arr[i + 1], arr[i]] = [arr[i], arr[i + 1]]
+            }  
+        }
+        len--;
+    }
+
+    return arr;
+}
+
 // Merge Sort
 export const mergeSort = arr => {
         
@@ -29,3 +45,4 @@ export const mergeSort = arr => {
     return sortedArray;
 
 }
+
