@@ -1,14 +1,26 @@
 .bars-container{
-    position: absolute;
-    margin: 0 auto;
     width: 100%;
+    margin: 1rem auto 0;
+    
+    position: absolute;
+
 }
 
 .array-bar {
-    background: blueviolet;
-    border: 1px solid;
-    display: inline-block;
     margin: 0 2px;
     width: 2px;
+    
+    display: inline-block;
+    
+    background: blueviolet;
+    border: 1px solid;
 }
 
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons button {
+    margin: 0 2px;
+}

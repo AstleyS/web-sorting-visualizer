@@ -1,6 +1,6 @@
 import React from 'react';
 import './SortingVisualizer.css';
-
+import * as sortingAlgo from './SortingVisualizer.js';
 
 export default class SortingVisualizer extends React.Component {
 
@@ -20,11 +20,17 @@ export default class SortingVisualizer extends React.Component {
 
     resetArray() {
         const array = [];
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < 10; i++) {
             // Push to array random values between  5 and 1000
-            array.push(randomIntFromInterval(5, 1000));
+            array.push(randomIntFromInterval(5, 500));
         }
         this.setState({array});
+    }
+
+    mergeSort() {
+       const expectedSort = this.state.array.slice().sort((a, b) => a - b);
+       const realSort = sortingAlgo.mergeSort(this.state.array);
+       console.log(assertSorting(expectedSort, realSort));
     }
 
     // This function renders the array values
@@ -40,12 +46,28 @@ export default class SortingVisualizer extends React.Component {
                             </div>
                 })
               }
+              <div className="buttons">
+                <button onClick={() => this.resetArray()}>Generate new array</button>
+                <button onClick={() => this.mergeSort()}>MergeSort</button>
+              </div>
           </div>
+          
         )
     }
+
+    
+
 }
 
 function randomIntFromInterval(min, max) {
   // min and max included
   return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function assertSorting(expected, real) {
+    if (expected.length !== real.length) return false;
+    for (let i = 0; i < expected.length; i++) {
+        if (expected[i] !== real[i]) return false;
+    }
+    return true;
 }
