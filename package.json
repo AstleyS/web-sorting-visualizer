@@ -1,5 +1,5 @@
 {
-  "name": "sorting-visualizer",
+  "name": "web-sorting-visualizer",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
