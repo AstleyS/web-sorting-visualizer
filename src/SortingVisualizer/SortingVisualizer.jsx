@@ -1,6 +1,8 @@
 import React from 'react';
 import './SortingVisualizer.css';
-import * as sortingAlgo from './SortingVisualizer.js';
+import { bubbleSortAlgo } from '../algorithms/bubbleSortAlgo';
+import { selectionSortAlgo } from '../algorithms/selectionSortAlgo';
+import { mergeSortAlgo } from '../algorithms/mergeSortAlgo';
 
 export default class SortingVisualizer extends React.Component {
 
@@ -29,21 +31,21 @@ export default class SortingVisualizer extends React.Component {
 
     bubbleSort() {
         const expectedSort = this.state.array.slice().sort((a, b) => a - b);
-        const realSort = sortingAlgo.bubbleSort(this.state.array);
+        const realSort = bubbleSortAlgo(this.state.array);
         console.log(assertSorting(expectedSort, realSort)); 
         console.log({realSort})
     }
 
     selectionSort() {
         const expectedSort = this.state.array.slice().sort((a, b) => a - b);
-        const realSort = sortingAlgo.selectionSort(this.state.array);
+        const realSort = selectionSortAlgo(this.state.array);
         console.log(assertSorting(expectedSort, realSort)); 
         console.log({realSort})
     }
 
     mergeSort() {
        const expectedSort = this.state.array.sort((a, b) => a - b);
-       const realSort = sortingAlgo.mergeSort(this.state.array);
+       const realSort = mergeSortAlgo(this.state.array);
        console.log(assertSorting(expectedSort, realSort));
        console.log({realSort})
     }

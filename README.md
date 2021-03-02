@@ -1,5 +1,7 @@
 # Sorting Algorithm Visualizer
+
 In this project, I created a Sorting Algorithm Visualizer using React.js framework  
+Inspired by Clement Mihailescu
 
 # Getting Started with Create React App
 
